@@ -92,13 +92,13 @@ public class StreamdemoApplication {
 
 
 		//group
-		Map<Integer, List<Person>> groupby= people.stream()
-		             .collect(Collectors.groupingBy(Person::getAge));
+		Map<Gender, List<Person>> groupby= people.stream()
+		             .collect(Collectors.groupingBy(Person::getGender));
 
 
 
-	   groupby.forEach((age,people1)->{
-		System.out.println(age);
+	   groupby.forEach((gender,people1)->{
+		System.out.println(gender);
 		people1.forEach(System.out::println);
 		System.out.println();
 	   });
